@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionamento de App</title>
+    <script type="text/javascript">
+        function redirectToStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                // Redireciona para a Google Play Store
+                window.location.href = "https://play.google.com/store/apps/details?id=com.sport.dfeat";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                // Redireciona para a Apple App Store
+                window.location.href = "https://apps.apple.com/fi/app/dfeat-sport-connection/id6478242431";
+            } else {
+                // Redireciona para um site genérico ou exibe uma mensagem
+                window.location.href = "https://www.dfeat.com";
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToStore()">
+    <h1>Redirecionando...</h1>
+    <p>Você será redirecionado para a loja de aplicativos em instantes.</p>
+</body>
+</html>
